@@ -59,8 +59,8 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  // ❗️ QUAN TRỌNG: Hãy thay thế key mẫu này bằng API key của riêng bạn từ OpenWeatherMap
-  static const String _apiKey = '86e7e3188dc6232b175d5b70bea7cd9e';
+ 
+  static const String _apiKey = [API_KEY];
   Future<WeatherData>? _weatherFuture;
   String? _debugMessage;
 
@@ -112,14 +112,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<WeatherData> _fetchWeather() async {
     try {
-      // *** ĐÃ XÓA KHỐI KIỂM TRA API KEY GÂY LỖI TẠI ĐÂY ***
-      // Logic cũ bị xóa:
-      // if (_apiKey == '86e7e3188dc6232b175d5b70bea7cd9e') {
-      //   throw Exception('API key not configured');
-      // }
+      
 
       // 1. Kiểm tra xem key có rỗng không (an toàn hơn)
-      if (_apiKey.isEmpty || _apiKey == '86e7e3188dc6232b175d5b70bea7cd9e') {
+      if (_apiKey.isEmpty || _apiKey == [API_KEY]) {
         setState(() {
           _debugMessage = 'Please replace the placeholder API key with your actual OpenWeatherMap API key.';
         });
