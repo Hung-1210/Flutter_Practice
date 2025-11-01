@@ -75,7 +75,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
 
   Future<List<Article>> _fetchArticles(String category) async {
     // Thay YOUR_API_KEY bằng API key từ newsapi.org
-    const apiKey = '89688a652ad44400b7f4436cfc52a27d';
+    const apiKey = [API_KEY];
     final url = Uri.parse(
       'https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=$apiKey',
     );
